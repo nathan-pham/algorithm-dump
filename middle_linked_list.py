@@ -23,6 +23,12 @@ class ListNode:
     def __str__(self):
         return f"[{self.val}, {str(self.next)}]"
 
+    def __eq__(self, other):
+        if isinstance(other, ListNode):
+            return str(self) == str(other)
+
+        return False
+
 
 def middle_node(head: Optional[ListNode] = None) -> Optional[ListNode]:
     if head is None:
